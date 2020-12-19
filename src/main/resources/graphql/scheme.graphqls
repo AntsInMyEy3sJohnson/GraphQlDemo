@@ -1,0 +1,48 @@
+# Actors
+type ActorResponse {
+    actors: [Actor!]
+}
+
+type Actor {
+    id: ID!
+    firstName: String
+    lastName: String
+    age: Int
+    gender: String
+    characters: [Character!]
+}
+
+# Characters
+type CharacterResponse {
+    characters: [Character!]
+}
+
+type Character {
+    id: ID!
+    name: String
+    actor: Actor!
+    movies: [Movie!]
+}
+
+# Movies
+type MovieResponse {
+    movies: [Movie!]
+}
+
+type Movie {
+    id: ID!
+    name: String
+    year: Int
+    genre: String
+    characters: [Character!]
+}
+
+
+type Query {
+    # Actors
+    getAllActors: ActorResponse!
+    # Characters
+    getAllCharacters: CharacterResponse!
+    # Movies
+    getAllMovies: MovieResponse!
+}
