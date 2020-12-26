@@ -7,7 +7,6 @@ import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
 import javax.persistence.*;
-import java.util.List;
 import java.util.Set;
 
 
@@ -19,7 +18,7 @@ public class Movie {
 
     public static Movie withProperties(String name, int year, Genre genre) {
         var movie = new Movie();
-        movie.setName(name);
+        movie.setTitle(name);
         movie.setYear(year);
         movie.setGenre(genre);
         return movie;
@@ -29,7 +28,7 @@ public class Movie {
     @GeneratedValue
     private long id;
 
-    private String name;
+    private String title;
 
     private int year;
 
@@ -53,6 +52,5 @@ public class Movie {
         ROMANCE,
         DOCUMENTARY
     }
-
 
 }

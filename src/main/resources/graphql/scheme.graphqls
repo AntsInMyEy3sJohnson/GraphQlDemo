@@ -31,12 +31,11 @@ type MovieResponse {
 
 type Movie {
     id: ID!
-    name: String
+    title: String
     year: Int
     genre: String
     characters: [Character!]
 }
-
 
 type Query {
     # Actors
